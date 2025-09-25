@@ -57,5 +57,14 @@
    }
    #image{
     margin-top: 2em;
-   } 
+   }
+   #icon{
+      /* border:1px solid green; */
+      position: relative;
+      top: 0.5em;
+   }
+   .signup_btn{
+     width: 150px;
+   }
+   
 }

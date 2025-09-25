@@ -17,7 +17,7 @@ function ProfileImg() {
     }
   return (
     <div>
-     <img src={Image?Image:icon} alt="" onClick={togglepr}  style={{borderRadius:"50%",border:"1px solid red",padding:"4px 4px" }} width="40px" height="40px" /> 
+     <img src={Image?Image:icon} alt="" onClick={togglepr}  style={{borderRadius:"50%",border:"2px solid red",padding:"4px 4px" }} width="40px" height="40px" /> 
      
     </div>
   )

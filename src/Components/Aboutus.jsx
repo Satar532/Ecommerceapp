@@ -8,7 +8,7 @@ export default function Aboutus() {
       const clearint=setInterval(() => {
       setlan('')
       const random=Math.floor(Math.random()*4)
-      console.log(random)
+  
       const languge=Language[random]
       setlan(languge)
       
