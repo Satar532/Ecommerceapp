@@ -12,7 +12,7 @@ export default function GrandTotal() {
      const TotalPrice=()=>user.Carts.reduce((sum,item)=>sum+item.price*item.qty,0)
   return (
 
-    <div style={{display:"Flex",justifyContent:"center",paddingRight:"3em",fontWeight:"normal",fontFamily:"revert-layer",flexDirection:"column",alignItems:"center",marginTop:"1em "}}>
+    <div style={{display:"Flex",justifyContent:"center",paddingRight:"3em",fontWeight:"normal",fontFamily:"revert-layer",flexDirection:"column",alignItems:"center",marginTop:"1em ",flexWrap:"wrap"}}>
         <div className="formHangle" style={{width:"400px",padding:"0px 9px",boxShadow:"1px 1px 1px 1px gray"}}>
             <h2> Order Form</h2>
         <form style={{display:"flex",flexDirection:"column",rowGap:"0.7em"}}>
