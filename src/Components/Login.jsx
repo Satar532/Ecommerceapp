@@ -47,7 +47,8 @@ function Login() {
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"  {...register('password',{required:"Name is required",minLength:{value:5,message:"password must  5 char required "}})} onChange={(e)=>setpassword(e.target.value)}  />  
+    <input type="password" className="form-control" id="exampleInputPassword2
+    "  {...register('password',{required:"password is required",minLength:{value:5,message:"password must  5 char required "}})} onChange={(e)=>setpassword(e.target.value)} autoComplete=''  />  
     {!password.length>0&& <img src={passwordicon} alt="" style={{position:"relative",bottom:"2em",left:"0.4em"}}  />}
     {errors.password&&<p style={{color:"red",fontSize:"15px",fontWeight:"570"}}> {errors.password.message}</p>}
   </div>
@@ -56,7 +57,7 @@ function Login() {
     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" className="btn btn-primary" >Login</button>
-  <button type="submit" className="btn btn-primary ms-2">Don't have any account </button>
+  <button type="submit" className="btn btn-primary ms-2" onClick={()=>navigate('/signup')}>Don't have any account </button>
 </form>
       
     </div>

@@ -31,8 +31,8 @@ export default function Aboutus() {
 
 I am a skilled Full Stack Developer with 2 years of experience specializing in modern web application development using **React.js**, **Node.js**, and **JavaScript**. I have a strong command of both front-end and back-end technologies, with a proven ability to build responsive, user-friendly interfaces using **Bootstrap**, and scalable server-side solutions powered by **Node.js** and **SQL** databases. I also work with **Appwrite** to deliver secure and efficient backend services. My focus is on writing clean, maintainable code and delivering high-performance applications that align with business goals. I’m passionate about continuous learning and always stay updated with the latest trends in full stack development.
 </p>
-<p><h3> <span style={{color:"red", textShadow:"2px 2px 5px blue",letterSpacing:"1px"}}> i am Full stack </span> <span  style={{color:"blue",textShadow:"2px 2px 5px red"}}> {lan}
-  </span>  <span style={{color:"red",textShadow:"2px 2px 5px blue",letterSpacing:"1px"}}> Developer</span> </h3></p>
+<p style={{fontSize:"27px"}}> <span style={{color:"red", textShadow:"2px 2px 5px blue",letterSpacing:"1px"}}> i am Full stack </span> <span  style={{color:"blue",textShadow:"2px 2px 5px red"}}> {lan}
+  </span>  <span style={{color:"red",textShadow:"2px 2px 5px blue",letterSpacing:"1px"}}> Developer</span> </p>
 
 </div>
 <div className="imgCard" style={{border:"1px solid white",padding:"3em",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",boxShadow:"1px 1px 1px 1px gray"}}>

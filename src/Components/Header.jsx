@@ -33,7 +33,7 @@ export default function Header() {
 
     <div style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap"
       ,alignItems:"center",fontSize:"17px",fontWeight:"600",cursor:"pointer",position:"fixed",zIndex:"100",marginTop:"-26px",backgroundColor:"white",border:"1px solid white",width:"100%",boxShadow:"0.1px 0.1px 1px 1px gray",}}>
-      <div classNameName="logo"><img src={logo} alt="" width="100px" height="70px" style={{zIndex:"100"}} /></div>
+      <div className="logo"><img src={logo} alt="" width="100px" height="70px" style={{zIndex:"100"}} /></div>
       <nav className="navbar navbar-expand-lg " style={{backgroundColor:"white"}}>
   <div className="container-fluid">
   
@@ -55,7 +55,7 @@ export default function Header() {
               </ul>
       
     
-  <div classNameName="profileArea"style={{display:"flex",justifyContent:'space-between',paddingRight:"2em",gap:"24px",alignItems:"center"}}> <div className="form-check form-switch">
+  <div className="profileArea"style={{display:"flex",justifyContent:'space-between',paddingRight:"2em",gap:"24px",alignItems:"center"}}> <div className="form-check form-switch">
   <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={()=>Tooglethem()} />
   <label className="form-check-label" htmlFor="switchCheckDefault"></label>
 </div>
