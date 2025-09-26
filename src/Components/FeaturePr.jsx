@@ -6,6 +6,8 @@ import {useNavigate} from 'react-router-dom'
 export default function FeaturePr() {
   const navigate=useNavigate()
     const TopTrendProduct=useSelector(state=>state.Procuct.PrductList)
+    const users=useSelector(state=>state.Procuct.users)
+    console.log(users)
     const isLogined=useSelector(state=>state.Procuct.isLogined)
     const dispatch=useDispatch()
    const addCart=(item)=>{
@@ -37,7 +39,9 @@ export default function FeaturePr() {
           </>
           ))}
     </div>          
-
+    {users?.map((user)=>(
+      <p> {user.name}</p>
+    ))}     
     </div>
   )
 }
