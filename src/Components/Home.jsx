@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import Bag from './nobg.webp'
 import Slide from './Slide'
 import FeaturePr from './FeaturePr'
 
 export default function Home() {
   const [width,setwidth]=useState(3)
-
-    window.addEventListener('resize',()=>{
+     
+    useEffect(() => {
+      
+     window.addEventListener('resize',()=>{
        if(window.innerWidth<=640){
          setwidth(1)
        }
@@ -14,6 +16,9 @@ export default function Home() {
         setwidth(3)
        }
     })
+
+    }, [width])
+    
   return (
     <>
     <div className='maindev' >
