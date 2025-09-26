@@ -97,7 +97,7 @@ export default  function Footer() {
     
     <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
       © 2025 Copyright:
-      <a className="text-white" href="https://mdbootstrap.com/">Abdus us sattar full stack Developer</a>
+      <a className="text-white" href="https://mdbootstrap.com/" style={{textDecoration:"none"}}> <span style={{color:'white'}}> Kashif amin full stack Developer </span> </a>
     </div>
     
   </footer>

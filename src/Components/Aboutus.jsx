@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import AboutIMg from './Snapchat-196973501.jpg'
+import AboutIMg from './WhatsApp Image 2025-09-24 at 06.03.50_bd33545b.jpg'
 export default function Aboutus() {
  const Language=["C++","Jave","React js ","Node js"]
     const [lan,setlan]=useState("C++")
@@ -37,10 +37,10 @@ I am a skilled Full Stack Developer with 2 years of experience specializing in m
 </div>
 <div className="imgCard" style={{border:"1px solid white",padding:"3em",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",boxShadow:"1px 1px 1px 1px gray"}}>
   <img src={AboutIMg} alt="" width="100px" height="100px" style={{borderRadius:"50%"}} />
-  <h3> Abdul Sattar</h3>
-  <p> Whatsapp : +3479310892</p>
-  <p> Email : <a href="www.Email.coome"> satatkhansatrakhan@gmail.com</a> </p>
-  <p> Facebook : <a href="www.Email.coome"> www.facebook.com/satar22</a> </p>
+  <h3> Kashif Amin</h3>
+  <p> Whatsapp : +3119013390</p>
+  <p> Email : <a href="www.Email.coome"> 88Kashim99@gmail.com</a> </p>
+  <p> Facebook : <a href="www.Email.coome"> www.facebook.com/Kashif22</a> </p>
 
 </div>
     
