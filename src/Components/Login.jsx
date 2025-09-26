@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
  import personIcon from './person.png'
- import passwordicon  from './password.png' 
+ import passwordicon  from './password.png'
+ import email from './email.png' 
  import { Logins } from '../Feature';
   import {useNavigate} from 'react-router-dom'
+ import { useForm } from "react-hook-form"
 function Login() {
+  const [name,setname]=useState('')
+  const [password,setpassword]=useState('')
+  const [emails,setemail]=useState('')
+  const {register,handleSubmit , formState:{errors}}=useForm()
   const navigate=useNavigate()
   const Logined=useSelector(state=>state.Procuct.isLogined)
-  const [name,setname]=useState("")
-  const [password,setpassword]=useState("");
     const dispatch=useDispatch()
    if(Logined)navigate('/home')
 
-  const submit=(e)=>{
-    e.preventDefault()
+  const submit=(data)=>{
+     const {name,password}=data
     dispatch(Logins({name,password}))
 
   }
@@ -21,30 +25,37 @@ function Login() {
   return (
     <div className='container'style={{marginTop:"3em"}}>
         <h2>Login </h2>
-        <form>
+        <form onSubmit={handleSubmit(submit)}>
             <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Username</label>
-    <input type="text" className="form-control" id="exampleInputEmail1 "  aria-describedby="emailHelp" onChange={(e)=>setname(e.target.value)} />
+    <input type="text" className="form-control" id="exampleInputEmail1 "  aria-describedby="emailHelp" 
+    {...register('name',{required:"Name is required",minLength:{value:5,message:"at least 5 char required "}})} onChange={(e)=>setname(e.target.value)}  />
     {!name.length>0 && <img src={personIcon} alt="" style={{position:"relative",bottom:"2em",left:"0.4em"}}  />}
     
           
-    <div id="emailHelp" className="form-text">username must should contain capital and specil char</div>
+    <div id="emailHelp" className="form-text">{errors.name&&<p style={{color:"red",fontSize:"15px",fontWeight:"570"}}> {errors.name.message}</p>}</div>
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    {...register('email',{required:"Email is required",minLength:{value:5,message:"at least 5 char required "}})}
+     onChange={(e)=>setemail(e.target.value)}
+    />
+    {!emails.length>0 && <img src={email} alt="" style={{position:"relative",bottom:"2em",left:"0.4em"}}  />}
+    
+    <div id="emailHelp" className="form-text">{errors.email&&<p style={{color:"red",fontSize:"15px",fontWeight:"570"}}> {errors.email.message}</p>}</div>
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"  onChange={(e)=>setpassword(e.target.value)} />  
+    <input type="password" className="form-control" id="exampleInputPassword1"  {...register('password',{required:"Name is required",minLength:{value:5,message:"password must  5 char required "}})} onChange={(e)=>setpassword(e.target.value)}  />  
     {!password.length>0&& <img src={passwordicon} alt="" style={{position:"relative",bottom:"2em",left:"0.4em"}}  />}
+    {errors.password&&<p style={{color:"red",fontSize:"15px",fontWeight:"570"}}> {errors.password.message}</p>}
   </div>
   <div className="mb-3 form-check">
     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" className="btn btn-primary" onClick={(e)=>submit(e)}>Login</button>
+  <button type="submit" className="btn btn-primary" >Login</button>
   <button type="submit" className="btn btn-primary ms-2">Don't have any account </button>
 </form>
       

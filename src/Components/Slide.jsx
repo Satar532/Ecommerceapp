@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default function Slide({width}) {
+  console.log(width)
     const TopTrendProduct=useSelector(state=>state.Procuct.PrductList)
   return (
     <div className='slidemain' >

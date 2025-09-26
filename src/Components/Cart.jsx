@@ -15,9 +15,9 @@ export default function Cart() {
         
        
     <>     
-        <table style={{width:"100%",border:"1px solid white",paddingRight:"5em",paddingLeft:"4em"}}>
+        <table style={{width:"100%",border:"1px solid white",paddingRight:"5em",paddingLeft:"4em",overflowX:"auto",display:"flex",flexDirection:"column"}}>
         <thead style={{backgroundColor:"blue",color:"white"}} >
-          <tr style={{display:"flex",justifyContent:"space-between",padding:"9px, 0px",textAlign:"center",height:"30px"}}>
+          <tr style={{display:"flex",justifyContent:"space-between",padding:"9px, 0px",textAlign:"center",height:"30px",flexDirection:"column"}}>
           <th> Img</th>
           <th> Product Name</th>
           <th> Product Desc</th>

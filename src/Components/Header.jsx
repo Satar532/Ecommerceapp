@@ -74,8 +74,8 @@ export default function Header() {
   </div>
 </nav>
     </div>
-    <hr style={{position:"relative",bottom:"0.8em"}} />
-    
+    <hr style={{position:"relative",bottom:"0.8em"}}/>
+  
     </div>
   )
 }

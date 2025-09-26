@@ -260,7 +260,7 @@ reducers:{
   Logins:(state,action)=>{
     const {name,password}=action.payload;
     const islogin=state.users.some(islogined=>islogined.name==name&&islogined.password==password)
-     if(!islogin)return alert("Please First sign up")
+     if(!islogin)return alert("the account is not exist with this email and password")
      if(islogin){
       state.currentuser=name;
        state.isLogined=true      
