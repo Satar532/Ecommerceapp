@@ -11,7 +11,6 @@ export default function Signup() {
   const dispatch=useDispatch()
   const {register,handleSubmit,formState:{errors}}=useForm()
   const AlreadyAcc=useSelector(state=>state.Procuct.Alreadyacc)
-    const error=useSelector(state=>state.Procuct.errors)
   
     function submit (data){
        const {name,password}=data
@@ -29,10 +28,7 @@ export default function Signup() {
   return (
 
     <div className='container ' style={{marginTop:"7em"}}>
-      {error&& <div className="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{error} </strong>
-        <button type="button" class="btn-close" onClick={()=>dispatch(dismissbtn())}>X</button>
-        </div>}
+      
         <h3>Sign up</h3>
       <form className="row g-3 needs-noValidate" noValidate onSubmit={handleSubmit(submit)}>
   <div className="col-md-4">

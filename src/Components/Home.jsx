@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from 'react'
 import Bag from './nobg.webp'
 import Slide from './Slide'
 import FeaturePr from './FeaturePr'
+import StrickCompunts from './StrickCompunts'
 
 export default function Home() {
   const [width,setwidth]=useState(3)
@@ -38,6 +39,7 @@ Daily Load</h1>
     </div>
     
     <Slide  width={width} />
+    <StrickCompunts/>
     <FeaturePr/>
     </>
   )

@@ -5,12 +5,14 @@ import Router from '../Router/Router'
 import Footer from '../Extra/Footer'
 import LoginProflie from '../LoginProflie'
 import { useSelector } from 'react-redux'
+import StrickCompunts from '../StrickCompunts'
 export default function Layout() {
   const openProfile=useSelector(state=>state.Procuct.ToggleProfile)
   
   return (
     <>
     <Header/>
+     <StrickCompunts/>
      {openProfile?<LoginProflie />: null}
     <main>
        {!openProfile? <Router/>:null}

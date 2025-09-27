@@ -13,7 +13,6 @@ function Login() {
   const {register,handleSubmit , formState:{errors}}=useForm()
   const navigate=useNavigate()
   const Logined=useSelector(state=>state.Procuct.isLogined)
-  const error=useSelector(state=>state.Procuct.errors)
   
     const dispatch=useDispatch()
    if(Logined)navigate('/home')
@@ -26,10 +25,7 @@ function Login() {
 
   return (
     <div className='container'style={{marginTop:"3em"}}>
-     {error&& <div className="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>{error} </strong>
-  <button type="button" class="btn-close" onClick={()=>dispatch(dismissbtn())}>X</button>
-  </div>}
+     
         <h2>Login </h2>
         <form onSubmit={handleSubmit(submit)}>
             <div className="mb-3">
