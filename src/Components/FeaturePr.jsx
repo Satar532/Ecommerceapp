@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { Addtocart } from '../Feature'
-import Cart from './Cart'
+// import Cart from './Cart'
 import {useNavigate} from 'react-router-dom'
 export default function FeaturePr() {
   const navigate=useNavigate()
