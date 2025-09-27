@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
  import personIcon from './person.png'
  import passwordicon  from './password.png'
  import email from './email.png' 
- import { Logins } from '../Feature';
+ import { dismissbtn, Logins } from '../Feature';
   import {useNavigate} from 'react-router-dom'
  import { useForm } from "react-hook-form"
 function Login() {
@@ -13,6 +13,8 @@ function Login() {
   const {register,handleSubmit , formState:{errors}}=useForm()
   const navigate=useNavigate()
   const Logined=useSelector(state=>state.Procuct.isLogined)
+  const error=useSelector(state=>state.Procuct.errors)
+  
     const dispatch=useDispatch()
    if(Logined)navigate('/home')
 
@@ -24,6 +26,10 @@ function Login() {
 
   return (
     <div className='container'style={{marginTop:"3em"}}>
+     {error&& <div className="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{error} </strong>
+  <button type="button" class="btn-close" onClick={()=>dispatch(dismissbtn())}>X</button>
+  </div>}
         <h2>Login </h2>
         <form onSubmit={handleSubmit(submit)}>
             <div className="mb-3">
@@ -59,6 +65,7 @@ function Login() {
   <button type="submit" className="btn btn-primary" >Login</button>
   <button type="submit" className="btn btn-primary ms-2" onClick={()=>navigate('/signup')}>Don't have any account </button>
 </form>
+
       
     </div>
   )

@@ -253,14 +253,15 @@ rangeData:[],
   Alreadyacc:false,
  isLogined:false,
  currentuser:"",
-  ToggleProfile:false
+  ToggleProfile:false,
+  errors:null
  
 },
 reducers:{
   Logins:(state,action)=>{
     const {name,password}=action.payload;
     const islogin=state.users.some(islogined=>islogined.name==name&&islogined.password==password)
-     if(!islogin)return alert("the account is not exist with this email and password")
+     if(!islogin){ state.errors="the account is not exist with this email and password"}
      if(islogin){
       state.currentuser=name;
        state.isLogined=true      
@@ -274,16 +275,20 @@ reducers:{
        state.ToggleProfile=false
 
   },
+  dismissbtn:(state)=>{ 
+    state.errors=null
+  },
  Addtocart:(stata,acton)=>{
-  // console.log(acton.payload)
+
   const {title,id}=acton.payload;
-  console.log(title)
   if(!stata.isLogined) return alert("please First Login")
   const currentusers=stata.users.find(curr=>curr.name===stata.currentuser)
       const AlredayinCart=currentusers.Carts.find(item=>item.id==id)
-       if(AlredayinCart)return alert("item already in the cart");
+       if(AlredayinCart){ stata.errors="item already available in the cart"
+        return
+       }
          stata.isLogined&&currentusers.Carts.push(acton.payload)
-         alert(`you added this item in to cart ${title}`)
+         stata.errors=` ✔ you added this item in to cart ${title}`
  },
   restlength:(state)=>{
    state.leng=0;
@@ -337,22 +342,23 @@ reducers:{
 
   const {name,password}=action.payload
     if(!state.users.length) {
-      console.log("length1")
       state.users.push({name,password,Carts:[],primage:null})
-      return alert("You have successfully Created Accouont")
+       state.errors ="You have successfully Created Account"
     }
     else{
       const AlredycreatedAC=state.users.find((user)=> user.name===name&& user.password===password)
       if(AlredycreatedAC) 
         { 
-           alert("alredy have account Please Login")
+       state.errors =" your Account Already Exist with this credenital please login"
+           
            state.Alreadyacc=true 
            return
 
       }
       else{
       state.users.push({name,password,Carts:[],primage:null})
-     alert("You have successfully Created Accouont")
+       state.errors ="You have successfully Created Account"
+     
        return
       }
  }
@@ -368,5 +374,5 @@ setprofileimage:(state,action)=>{
  
 }
 })
- export const {Addtocart,updateqty,restlength,Remove,Rangeapply,SortlowtoHigh,Logins,Logout,RegisterAcc,removeLoginOut,setprofileimage,toggleProfile}=slice.actions
+ export const {Addtocart,updateqty,restlength,Remove,Rangeapply,SortlowtoHigh,Logins,Logout,RegisterAcc,removeLoginOut,setprofileimage,toggleProfile,dismissbtn}=slice.actions
 export const reducer=slice.reducer;

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { Addtocart } from '../Feature'
+import { Addtocart, dismissbtn } from '../Feature'
 // import Cart from './Cart'
 import {useNavigate} from 'react-router-dom'
 export default function FeaturePr() {
   const navigate=useNavigate()
     const TopTrendProduct=useSelector(state=>state.Procuct.PrductList)
-    const users=useSelector(state=>state.Procuct.users)
-
+   const error=useSelector(state=>state.Procuct.errors)
+       
     const isLogined=useSelector(state=>state.Procuct.isLogined)
     const dispatch=useDispatch()
    const addCart=(item)=>{
@@ -20,6 +20,10 @@ export default function FeaturePr() {
    }
   return (
     <div style={{opacity:!isLogined?"1":"1"}}>
+      {error&& <div className="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{error} </strong>
+        <button type="button" class="btn-close" onClick={()=>dispatch(dismissbtn())}  ></button>
+        </div>}
       <h1> Feature Products</h1>
       <div className="allitem" style={{display:"flex",flexWrap:"wrap",gap:"2em",justifyContent:"center"}}>
       {TopTrendProduct?.map((item,index)=>(

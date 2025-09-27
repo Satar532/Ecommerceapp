@@ -75,7 +75,7 @@ export default function Header() {
 </nav>
     </div>
     <hr style={{position:"relative",bottom:"0.8em"}}/>
-  
+     
     </div>
   )
 }
